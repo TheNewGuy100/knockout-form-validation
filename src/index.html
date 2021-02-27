@@ -16,97 +16,124 @@
         <form class="needs-validation col-md-12" novalidate>
             <div class="form-row">
                 <div class="col-md-6 mb-6">
-                    <label for="validationCustom01">Nome</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
-                    <div class="invalid-feedback">
-                        O campo Nome é obrigatório!
-                    </div>
+                    <label for="validationCustom01">*Nome</label>
+                    <input type="text" data-bind="value: firstName, css: {'is-valid': checker1() == true, 'is-invalid': checker1() == false}, valueUpdate: 'input'" class="form-control" value="Mark" placeholder="Pedro" required>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Tem algo errado tche!
+                        </div>
                 </div>
                 <div class="col-md-6 mb-6">
-                    <label for="validationCustom02">Sobrenome</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value=""
+                    <label for="validationCustom02">*Sobrenome</label>
+                    <input type="text" data-bind="value: lastName, css: {'is-valid': checker2() == true, 'is-invalid': checker2() == false}, valueUpdate: 'input'" class="form-control" id="validationCustom02" placeholder="Costa" value=""
                         required>
-                    <div class="invalid-feedback" data-bind="visible: !validate.isValid()">
-                        O campo Sobrenome é obrigatório!
-                    </div>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Tem algo errado tche!
+                        </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
-                    <label for="validationCustom03">Telefone</label>
-                    <input type="text" class="form-control" id="validationCustom03" placeholder="Telefone" value=""
+                    <label for="validationCustom03">*Telefone</label>
+                    <input type="text" class="form-control" id="validationCustom03" data-bind="value: telefone, css: {'is-valid': checker3() == true, 'is-invalid': checker3() == false}, valueUpdate: 'input'" placeholder="Préfixo + seu número" value=""
                         required>
-                    <div class="invalid-feedback">
-                        O campo Telefone é obrigatório!
-                    </div>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Tem algo errado tche!
+                        </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-8 mb-8">
-                    <label for="validationCustom06">Cep</label>
-                    <input type="text" class="form-control" id="validationCustom06" placeholder="Cep" required>
-                    <div class="invalid-feedback">
-                        O campo cep é obrigatório!
-                    </div>
+                    <label for="validationCustom06">*CEP</label>
+                    <input type="text" class="form-control" data-bind="value: cep_input, css: {'is-valid': checker4() == true, 'is-invalid': checker4() == false}, valueUpdate: 'input'" id="validationCustom06" placeholder="00000-000" required>
+                        <div class="valid-feedback">
+                            Agora, valide o CEP!
+                        </div>
+                        <div class="invalid-feedback">
+                            Tem algo errado tche!
+                        </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <label for="validationCustom10" style="color:#fff">CEP</label>
-                    <a class="btn btn-primary form-control" style="color:#fff">Validar CEP</a>
+                    <a class="btn btn-primary form-control" data-bind="click: myfunction" style="color:#fff">Validar CEP</a>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
-                    <label for="validationCustom09">Endereço</label>
-                    <input type="text" class="form-control" id="validationCustom09" placeholder="Endereço" required>
-                    <div class="invalid-feedback">
-                        O campo endereço é obrigatório!
-                    </div>
+                    <label for="validationCustom09">*Endereço</label>
+                    <input type="text" class="form-control" data-bind="value: endereco, css: {'is-valid': checker5() == true, 'is-invalid': checker5() == false}, valueUpdate: 'input'" id="validationCustom09" placeholder="Endereço" required>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Descrição larga demais!
+                        </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
-                    <label for="validationCustom08">Número da Residência</label>
-                    <input type="text" class="form-control" id="validationCustom08" placeholder="Numero" required>
-                    <div class="invalid-feedback">
-                        O campo número da residência é obrigatório!
-                    </div>
+                    <label for="validationCustom08">*Número da Residência</label>
+                    <input type="text" class="form-control" class="form-control" data-bind="value: num_residencia, css: {'is-valid': checker6() == true, 'is-invalid': checker6() == false}, valueUpdate: 'input'" id="validationCustom08" placeholder="Numero" required>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Você precisa preencher este campo!
+                        </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom11">Complemento (opcional)</label>
-                    <input type="text" class="form-control" id="validationCustom011" placeholder="Complemento">
+                    <input type="text" class="form-control" data-bind="value: complemento" placeholder="Complemento">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
-                    <label for="validationCustom07">Bairro</label>
-                    <input type="text" class="form-control" id="validationCustom07" placeholder="Bairro" required>
-                    <div class="invalid-feedback">
-                        O campo bairro é obrigatório!
-                    </div>
+                    <label for="validationCustom07">*Bairro</label>
+                    <input type="text" class="form-control" data-bind="value: bairro, css: {'is-valid': checker7() == true, 'is-invalid': checker7() == false}, valueUpdate: 'input'" id="validationCustom07" placeholder="Bairro" required>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Você precisa preencher este campo!
+                        </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
-                    <label for="validationCustom04">Cidade</label>
-                    <input type="text" class="form-control" id="validationCustom04" placeholder="Cidade" required>
-                    <div class="invalid-feedback">
-                        O campo cidade é obrigatório!
-                    </div>
+                    <label for="validationCustom04">*Cidade</label>
+                    <input type="text" class="form-control" data-bind="value: localidade" id="validationCustom04" disabled placeholder="Cidade" required>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Você precisa preencher este campo!
+                        </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
-                    <label for="validationCustom05">Estado</label>
-                    <input type="text" class="form-control" id="validationCustom05" placeholder="Estado" required>
-                    <div class="invalid-feedback">
-                        O campo estado é obrigatório!
-                    </div>
+                    <label for="validationCustom05">*Estado</label>
+                    <input type="text" class="form-control" data-bind="value: uf" id="validationCustom05"  disabled placeholder="Estado" required>
+                        <div class="valid-feedback">
+                            Tudo certo!
+                        </div>
+                        <div class="invalid-feedback">
+                            Você precisa preencher este campo!
+                        </div>
                 </div>
             </div>
             <br />
-            <button class="btn btn-primary" disabled type="submit">Enviar Forumlário</button>
+            <button class="btn btn-primary" type="submit" data-bind="click: verify_all, consoleTime"> Enviar Forumlário </button>
         </form>
     </div>
 
